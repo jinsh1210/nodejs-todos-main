@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
   const offset = (page - 1) * limit;
 
   //로그 출력
-  console.log("page:", page, "offset:", offset);
+  console.log("page:", page, "\noffset:", offset);
 
   const countQuery = "SELECT COUNT(*) AS count FROM todos WHERE user_id = ?";
   db.query(countQuery, [userId], (err, countResult) => {
